@@ -1,42 +1,708 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+ box-sizing: border-box;
 }
 
+:root {
+ --font-inria-sans: "Exo 2", serif;
+}
+
+body {
+ font-family: var(--font-inria-sans);
+}
+
+html {
+ font-size: calc(0.625rem + 0.41666666666666663vw);
+}
+
+h1 {
+ font-size: 2rem;
+}
+
+p {
+ font-size: 1rem;
+ margin: 0;
+ padding: 0;
+}
+
+html {
+ font-size: 1rem;
+}
 a {
-  color: inherit;
-  text-decoration: none;
+ text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@media screen and (max-width: 1920px) {
+ html {
+  font-size: calc(0.625rem + 0.41666666666666674vw);
+ }
+}
+@media screen and (max-width: 1440px) {
+ html {
+  font-size: calc(0.7190426638917794rem + 0.3121748178980229vw);
+ }
+}
+@media screen and (max-width: 479px) {
+ html {
+  font-size: calc(0.7494769874476988rem + 0.8368200836820083vw);
+ }
+}
+.g-root_theme_light {
+ --g-font-family-sans: "Exo 2", serif;
+ --g-font-family-monospace: "Exo 2", serif;
+
+ --g-color-private-white-50: rgba(255, 255, 255, 0.05);
+ --g-color-private-white-70: rgba(255, 255, 255, 0.07);
+ --g-color-private-white-100: rgba(255, 255, 255, 0.1);
+ --g-color-private-white-150: rgba(255, 255, 255, 0.15);
+ --g-color-private-white-200: rgba(255, 255, 255, 0.2);
+ --g-color-private-white-250: rgba(255, 255, 255, 0.25);
+ --g-color-private-white-300: rgba(255, 255, 255, 0.3);
+ --g-color-private-white-350: rgba(255, 255, 255, 0.35);
+ --g-color-private-white-400: rgba(255, 255, 255, 0.4);
+ --g-color-private-white-450: rgba(255, 255, 255, 0.45);
+ --g-color-private-white-500: rgba(255, 255, 255, 0.5);
+ --g-color-private-white-550: rgba(255, 255, 255, 0.55);
+ --g-color-private-white-600: rgba(255, 255, 255, 0.6);
+ --g-color-private-white-650: rgba(255, 255, 255, 0.65);
+ --g-color-private-white-700: rgba(255, 255, 255, 0.7);
+ --g-color-private-white-750: rgba(255, 255, 255, 0.75);
+ --g-color-private-white-800: rgba(255, 255, 255, 0.8);
+ --g-color-private-white-850: rgba(255, 255, 255, 0.85);
+ --g-color-private-white-900: rgba(255, 255, 255, 0.9);
+ --g-color-private-white-950: rgba(255, 255, 255, 0.95);
+ --g-color-private-white-550-solid: rgb(255, 255, 255);
+
+ --g-color-private-black-50: rgba(0, 0, 0, 0.05);
+ --g-color-private-black-100: rgba(0, 0, 0, 0.1);
+ --g-color-private-black-150: rgba(0, 0, 0, 0.15);
+ --g-color-private-black-200: rgba(0, 0, 0, 0.2);
+ --g-color-private-black-250: rgba(0, 0, 0, 0.25);
+ --g-color-private-black-300: rgba(0, 0, 0, 0.3);
+ --g-color-private-black-350: rgba(0, 0, 0, 0.35);
+ --g-color-private-black-400: rgba(0, 0, 0, 0.4);
+ --g-color-private-black-450: rgba(0, 0, 0, 0.45);
+ --g-color-private-black-500: rgba(0, 0, 0, 0.5);
+ --g-color-private-black-550: rgba(0, 0, 0, 0.55);
+ --g-color-private-black-600: rgba(0, 0, 0, 0.6);
+ --g-color-private-black-650: rgba(0, 0, 0, 0.65);
+ --g-color-private-black-700: rgba(0, 0, 0, 0.7);
+ --g-color-private-black-750: rgba(0, 0, 0, 0.75);
+ --g-color-private-black-800: rgba(0, 0, 0, 0.8);
+ --g-color-private-black-850: rgba(0, 0, 0, 0.85);
+ --g-color-private-black-900: rgba(0, 0, 0, 0.9);
+ --g-color-private-black-950: rgba(0, 0, 0, 0.95);
+ --g-color-private-black-550-solid: rgb(69, 80, 67);
+ --g-color-private-black-950-solid: rgb(8, 9, 7);
+ --g-color-private-black-900-solid: rgb(15, 18, 15);
+ --g-color-private-black-850-solid: rgb(23, 27, 22);
+ --g-color-private-black-800-solid: rgb(31, 36, 30);
+ --g-color-private-black-750-solid: rgb(38, 45, 37);
+ --g-color-private-black-700-solid: rgb(46, 53, 45);
+ --g-color-private-black-650-solid: rgb(54, 62, 52);
+ --g-color-private-black-600-solid: rgb(61, 71, 60);
+ --g-color-private-black-500-solid: rgb(77, 89, 75);
+ --g-color-private-black-450-solid: rgb(84, 98, 82);
+ --g-color-private-black-400-solid: rgb(92, 107, 89);
+ --g-color-private-black-350-solid: rgb(99, 116, 97);
+ --g-color-private-black-300-solid: rgb(107, 125, 104);
+ --g-color-private-black-250-solid: rgb(115, 134, 112);
+ --g-color-private-black-200-solid: rgb(122, 142, 119);
+ --g-color-private-black-150-solid: rgb(130, 151, 127);
+ --g-color-private-black-100-solid: rgb(138, 160, 134);
+ --g-color-private-black-50-solid: rgb(145, 169, 142);
+
+ --g-color-private-brand-50: rgba(49, 78, 60, 0.1);
+ --g-color-private-brand-100: rgba(49, 78, 60, 0.15);
+ --g-color-private-brand-150: rgba(49, 78, 60, 0.2);
+ --g-color-private-brand-200: rgba(49, 78, 60, 0.3);
+ --g-color-private-brand-250: rgba(49, 78, 60, 0.4);
+ --g-color-private-brand-300: rgba(49, 78, 60, 0.5);
+ --g-color-private-brand-350: rgba(49, 78, 60, 0.6);
+ --g-color-private-brand-400: rgba(49, 78, 60, 0.7);
+ --g-color-private-brand-450: rgba(49, 78, 60, 0.8);
+ --g-color-private-brand-500: rgba(49, 78, 60, 0.9);
+ --g-color-private-brand-550-solid: rgb(49, 78, 60);
+ --g-color-private-brand-1000-solid: rgb(38, 42, 40);
+ --g-color-private-brand-950-solid: rgb(39, 44, 41);
+ --g-color-private-brand-900-solid: rgb(40, 49, 43);
+ --g-color-private-brand-850-solid: rgb(41, 53, 46);
+ --g-color-private-brand-800-solid: rgb(43, 57, 48);
+ --g-color-private-brand-750-solid: rgb(44, 61, 50);
+ --g-color-private-brand-700-solid: rgb(45, 65, 53);
+ --g-color-private-brand-650-solid: rgb(46, 70, 55);
+ --g-color-private-brand-600-solid: rgb(48, 74, 58);
+ --g-color-private-brand-500-solid: rgb(59, 88, 69);
+ --g-color-private-brand-450-solid: rgb(70, 98, 78);
+ --g-color-private-brand-400-solid: rgb(80, 108, 87);
+ --g-color-private-brand-350-solid: rgb(91, 118, 96);
+ --g-color-private-brand-300-solid: rgb(101, 128, 105);
+ --g-color-private-brand-250-solid: rgb(111, 138, 113);
+ --g-color-private-brand-200-solid: rgb(122, 148, 122);
+ --g-color-private-brand-150-solid: rgb(132, 158, 131);
+ --g-color-private-brand-100-solid: rgb(137, 163, 136);
+ --g-color-private-brand-50-solid: rgb(143, 168, 140);
+
+ --g-color-private-orange-50: rgba(255, 119, 0, 0.1);
+ --g-color-private-orange-100: rgba(255, 119, 0, 0.15);
+ --g-color-private-orange-150: rgba(255, 119, 0, 0.2);
+ --g-color-private-orange-200: rgba(255, 119, 0, 0.3);
+ --g-color-private-orange-250: rgba(255, 119, 0, 0.4);
+ --g-color-private-orange-300: rgba(255, 119, 0, 0.5);
+ --g-color-private-orange-350: rgba(255, 119, 0, 0.6);
+ --g-color-private-orange-400: rgba(255, 119, 0, 0.7);
+ --g-color-private-orange-450: rgba(255, 119, 0, 0.8);
+ --g-color-private-orange-500: rgba(255, 119, 0, 0.9);
+ --g-color-private-orange-550-solid: rgb(255, 119, 0);
+ --g-color-private-orange-1000-solid: rgb(69, 48, 31);
+ --g-color-private-orange-950-solid: rgb(80, 53, 29);
+ --g-color-private-orange-900-solid: rgb(102, 61, 25);
+ --g-color-private-orange-850-solid: rgb(124, 69, 22);
+ --g-color-private-orange-800-solid: rgb(146, 78, 18);
+ --g-color-private-orange-750-solid: rgb(167, 86, 14);
+ --g-color-private-orange-700-solid: rgb(189, 94, 11);
+ --g-color-private-orange-650-solid: rgb(211, 102, 7);
+ --g-color-private-orange-600-solid: rgb(233, 111, 4);
+ --g-color-private-orange-500-solid: rgb(245, 125, 15);
+ --g-color-private-orange-450-solid: rgb(235, 131, 30);
+ --g-color-private-orange-400-solid: rgb(224, 137, 45);
+ --g-color-private-orange-350-solid: rgb(214, 143, 60);
+ --g-color-private-orange-300-solid: rgb(204, 149, 75);
+ --g-color-private-orange-250-solid: rgb(194, 154, 89);
+ --g-color-private-orange-200-solid: rgb(184, 160, 104);
+ --g-color-private-orange-150-solid: rgb(173, 166, 119);
+ --g-color-private-orange-100-solid: rgb(168, 169, 127);
+ --g-color-private-orange-50-solid: rgb(163, 172, 134);
+
+ --g-color-private-green-50: rgba(59, 201, 53, 0.1);
+ --g-color-private-green-100: rgba(59, 201, 53, 0.15);
+ --g-color-private-green-150: rgba(59, 201, 53, 0.2);
+ --g-color-private-green-200: rgba(59, 201, 53, 0.3);
+ --g-color-private-green-250: rgba(59, 201, 53, 0.4);
+ --g-color-private-green-300: rgba(59, 201, 53, 0.5);
+ --g-color-private-green-350: rgba(59, 201, 53, 0.6);
+ --g-color-private-green-400: rgba(59, 201, 53, 0.7);
+ --g-color-private-green-450: rgba(59, 201, 53, 0.8);
+ --g-color-private-green-500: rgba(59, 201, 53, 0.9);
+ --g-color-private-green-550-solid: rgb(59, 201, 53);
+ --g-color-private-green-1000-solid: rgb(39, 61, 39);
+ --g-color-private-green-950-solid: rgb(41, 69, 39);
+ --g-color-private-green-900-solid: rgb(43, 86, 41);
+ --g-color-private-green-850-solid: rgb(45, 102, 43);
+ --g-color-private-green-800-solid: rgb(48, 119, 45);
+ --g-color-private-green-750-solid: rgb(50, 135, 46);
+ --g-color-private-green-700-solid: rgb(52, 152, 48);
+ --g-color-private-green-650-solid: rgb(54, 168, 50);
+ --g-color-private-green-600-solid: rgb(57, 185, 51);
+ --g-color-private-green-500-solid: rgb(68, 199, 63);
+ --g-color-private-green-450-solid: rgb(78, 196, 72);
+ --g-color-private-green-400-solid: rgb(87, 194, 82);
+ --g-color-private-green-350-solid: rgb(97, 192, 91);
+ --g-color-private-green-300-solid: rgb(106, 190, 101);
+ --g-color-private-green-250-solid: rgb(115, 187, 111);
+ --g-color-private-green-200-solid: rgb(125, 185, 120);
+ --g-color-private-green-150-solid: rgb(134, 183, 130);
+ --g-color-private-green-100-solid: rgb(139, 181, 135);
+ --g-color-private-green-50-solid: rgb(144, 180, 139);
+
+ --g-color-private-yellow-50: rgba(255, 219, 77, 0.1);
+ --g-color-private-yellow-100: rgba(255, 219, 77, 0.15);
+ --g-color-private-yellow-150: rgba(255, 219, 77, 0.2);
+ --g-color-private-yellow-200: rgba(255, 219, 77, 0.3);
+ --g-color-private-yellow-250: rgba(255, 219, 77, 0.4);
+ --g-color-private-yellow-300: rgba(255, 219, 77, 0.5);
+ --g-color-private-yellow-350: rgba(255, 219, 77, 0.6);
+ --g-color-private-yellow-400: rgba(255, 219, 77, 0.7);
+ --g-color-private-yellow-450: rgba(255, 219, 77, 0.8);
+ --g-color-private-yellow-500: rgba(255, 219, 77, 0.9);
+ --g-color-private-yellow-550-solid: rgb(255, 219, 77);
+ --g-color-private-yellow-1000-solid: rgb(69, 63, 42);
+ --g-color-private-yellow-950-solid: rgb(80, 73, 44);
+ --g-color-private-yellow-900-solid: rgb(102, 91, 48);
+ --g-color-private-yellow-850-solid: rgb(124, 109, 52);
+ --g-color-private-yellow-800-solid: rgb(146, 128, 57);
+ --g-color-private-yellow-750-solid: rgb(167, 146, 61);
+ --g-color-private-yellow-700-solid: rgb(189, 164, 65);
+ --g-color-private-yellow-650-solid: rgb(211, 182, 69);
+ --g-color-private-yellow-600-solid: rgb(233, 201, 73);
+ --g-color-private-yellow-500-solid: rgb(245, 215, 84);
+ --g-color-private-yellow-450-solid: rgb(235, 211, 91);
+ --g-color-private-yellow-400-solid: rgb(224, 207, 99);
+ --g-color-private-yellow-350-solid: rgb(214, 203, 106);
+ --g-color-private-yellow-300-solid: rgb(204, 199, 113);
+ --g-color-private-yellow-250-solid: rgb(194, 194, 120);
+ --g-color-private-yellow-200-solid: rgb(184, 190, 127);
+ --g-color-private-yellow-150-solid: rgb(173, 186, 135);
+ --g-color-private-yellow-100-solid: rgb(168, 184, 138);
+ --g-color-private-yellow-50-solid: rgb(163, 182, 142);
+
+ --g-color-private-red-50: rgba(255, 4, 0, 0.1);
+ --g-color-private-red-100: rgba(255, 4, 0, 0.15);
+ --g-color-private-red-150: rgba(255, 4, 0, 0.2);
+ --g-color-private-red-200: rgba(255, 4, 0, 0.3);
+ --g-color-private-red-250: rgba(255, 4, 0, 0.4);
+ --g-color-private-red-300: rgba(255, 4, 0, 0.5);
+ --g-color-private-red-350: rgba(255, 4, 0, 0.6);
+ --g-color-private-red-400: rgba(255, 4, 0, 0.7);
+ --g-color-private-red-450: rgba(255, 4, 0, 0.8);
+ --g-color-private-red-500: rgba(255, 4, 0, 0.9);
+ --g-color-private-red-550-solid: rgb(255, 4, 0);
+ --g-color-private-red-1000-solid: rgb(69, 31, 31);
+ --g-color-private-red-950-solid: rgb(80, 30, 29);
+ --g-color-private-red-900-solid: rgb(102, 26, 25);
+ --g-color-private-red-850-solid: rgb(124, 23, 22);
+ --g-color-private-red-800-solid: rgb(146, 20, 18);
+ --g-color-private-red-750-solid: rgb(167, 17, 14);
+ --g-color-private-red-700-solid: rgb(189, 14, 11);
+ --g-color-private-red-650-solid: rgb(211, 10, 7);
+ --g-color-private-red-600-solid: rgb(233, 7, 4);
+ --g-color-private-red-500-solid: rgb(245, 21, 15);
+ --g-color-private-red-450-solid: rgb(235, 39, 30);
+ --g-color-private-red-400-solid: rgb(224, 56, 45);
+ --g-color-private-red-350-solid: rgb(214, 74, 60);
+ --g-color-private-red-300-solid: rgb(204, 91, 75);
+ --g-color-private-red-250-solid: rgb(194, 108, 89);
+ --g-color-private-red-200-solid: rgb(184, 126, 104);
+ --g-color-private-red-150-solid: rgb(173, 143, 119);
+ --g-color-private-red-100-solid: rgb(168, 152, 127);
+ --g-color-private-red-50-solid: rgb(163, 161, 134);
+
+ --g-color-private-blue-50: rgba(82, 130, 255, 0.1);
+ --g-color-private-blue-100: rgba(82, 130, 255, 0.15);
+ --g-color-private-blue-150: rgba(82, 130, 255, 0.2);
+ --g-color-private-blue-200: rgba(82, 130, 255, 0.3);
+ --g-color-private-blue-250: rgba(82, 130, 255, 0.4);
+ --g-color-private-blue-300: rgba(82, 130, 255, 0.5);
+ --g-color-private-blue-350: rgba(82, 130, 255, 0.6);
+ --g-color-private-blue-400: rgba(82, 130, 255, 0.7);
+ --g-color-private-blue-450: rgba(82, 130, 255, 0.8);
+ --g-color-private-blue-500: rgba(82, 130, 255, 0.9);
+ --g-color-private-blue-550-solid: rgb(82, 130, 255);
+ --g-color-private-blue-1000-solid: rgb(43, 50, 69);
+ --g-color-private-blue-950-solid: rgb(45, 55, 80);
+ --g-color-private-blue-900-solid: rgb(50, 64, 102);
+ --g-color-private-blue-850-solid: rgb(54, 74, 124);
+ --g-color-private-blue-800-solid: rgb(59, 83, 146);
+ --g-color-private-blue-750-solid: rgb(64, 92, 167);
+ --g-color-private-blue-700-solid: rgb(68, 102, 189);
+ --g-color-private-blue-650-solid: rgb(73, 111, 211);
+ --g-color-private-blue-600-solid: rgb(77, 121, 233);
+ --g-color-private-blue-500-solid: rgb(89, 135, 244);
+ --g-color-private-blue-450-solid: rgb(96, 140, 234);
+ --g-color-private-blue-400-solid: rgb(103, 144, 223);
+ --g-color-private-blue-350-solid: rgb(110, 149, 213);
+ --g-color-private-blue-300-solid: rgb(118, 154, 202);
+ --g-color-private-blue-250-solid: rgb(125, 159, 191);
+ --g-color-private-blue-200-solid: rgb(132, 164, 181);
+ --g-color-private-blue-150-solid: rgb(139, 168, 170);
+ --g-color-private-blue-100-solid: rgb(142, 171, 165);
+ --g-color-private-blue-50-solid: rgb(146, 173, 160);
+
+ --g-color-private-cool-grey-50: rgba(107, 132, 153, 0.1);
+ --g-color-private-cool-grey-100: rgba(107, 132, 153, 0.15);
+ --g-color-private-cool-grey-150: rgba(107, 132, 153, 0.2);
+ --g-color-private-cool-grey-200: rgba(107, 132, 153, 0.3);
+ --g-color-private-cool-grey-250: rgba(107, 132, 153, 0.4);
+ --g-color-private-cool-grey-300: rgba(107, 132, 153, 0.5);
+ --g-color-private-cool-grey-350: rgba(107, 132, 153, 0.6);
+ --g-color-private-cool-grey-400: rgba(107, 132, 153, 0.7);
+ --g-color-private-cool-grey-450: rgba(107, 132, 153, 0.8);
+ --g-color-private-cool-grey-500: rgba(107, 132, 153, 0.9);
+ --g-color-private-cool-grey-550-solid: rgb(107, 132, 153);
+ --g-color-private-cool-grey-1000-solid: rgb(47, 50, 54);
+ --g-color-private-cool-grey-950-solid: rgb(50, 55, 59);
+ --g-color-private-cool-grey-900-solid: rgb(57, 65, 71);
+ --g-color-private-cool-grey-850-solid: rgb(64, 74, 83);
+ --g-color-private-cool-grey-800-solid: rgb(72, 84, 95);
+ --g-color-private-cool-grey-750-solid: rgb(79, 94, 106);
+ --g-color-private-cool-grey-700-solid: rgb(86, 103, 118);
+ --g-color-private-cool-grey-650-solid: rgb(93, 113, 130);
+ --g-color-private-cool-grey-600-solid: rgb(100, 122, 141);
+ --g-color-private-cool-grey-500-solid: rgb(112, 137, 153);
+ --g-color-private-cool-grey-450-solid: rgb(116, 141, 152);
+ --g-color-private-cool-grey-400-solid: rgb(121, 146, 152);
+ --g-color-private-cool-grey-350-solid: rgb(125, 150, 151);
+ --g-color-private-cool-grey-300-solid: rgb(130, 155, 151);
+ --g-color-private-cool-grey-250-solid: rgb(135, 160, 151);
+ --g-color-private-cool-grey-200-solid: rgb(139, 164, 150);
+ --g-color-private-cool-grey-150-solid: rgb(144, 169, 150);
+ --g-color-private-cool-grey-100-solid: rgb(146, 171, 150);
+ --g-color-private-cool-grey-50-solid: rgb(148, 173, 149);
+
+ --g-color-private-purple-50: rgba(143, 82, 204, 0.1);
+ --g-color-private-purple-100: rgba(143, 82, 204, 0.15);
+ --g-color-private-purple-150: rgba(143, 82, 204, 0.2);
+ --g-color-private-purple-200: rgba(143, 82, 204, 0.3);
+ --g-color-private-purple-250: rgba(143, 82, 204, 0.4);
+ --g-color-private-purple-300: rgba(143, 82, 204, 0.5);
+ --g-color-private-purple-350: rgba(143, 82, 204, 0.6);
+ --g-color-private-purple-400: rgba(143, 82, 204, 0.7);
+ --g-color-private-purple-450: rgba(143, 82, 204, 0.8);
+ --g-color-private-purple-500: rgba(143, 82, 204, 0.9);
+ --g-color-private-purple-550-solid: rgb(143, 82, 204);
+ --g-color-private-purple-1000-solid: rgb(52, 43, 61);
+ --g-color-private-purple-950-solid: rgb(57, 45, 70);
+ --g-color-private-purple-900-solid: rgb(68, 50, 86);
+ --g-color-private-purple-850-solid: rgb(79, 54, 103);
+ --g-color-private-purple-800-solid: rgb(90, 59, 120);
+ --g-color-private-purple-750-solid: rgb(100, 64, 137);
+ --g-color-private-purple-700-solid: rgb(111, 68, 154);
+ --g-color-private-purple-650-solid: rgb(122, 73, 170);
+ --g-color-private-purple-600-solid: rgb(132, 77, 187);
+ --g-color-private-purple-500-solid: rgb(144, 92, 199);
+ --g-color-private-purple-450-solid: rgb(145, 101, 193);
+ --g-color-private-purple-400-solid: rgb(146, 111, 188);
+ --g-color-private-purple-350-solid: rgb(147, 120, 182);
+ --g-color-private-purple-300-solid: rgb(148, 130, 177);
+ --g-color-private-purple-250-solid: rgb(149, 140, 171);
+ --g-color-private-purple-200-solid: rgb(150, 149, 166);
+ --g-color-private-purple-150-solid: rgb(151, 159, 160);
+ --g-color-private-purple-100-solid: rgb(152, 164, 157);
+ --g-color-private-purple-50-solid: rgb(152, 168, 155);
+
+ --g-color-base-brand: rgb(49, 78, 60);
+ --g-color-base-background: #99b295;
+ --g-color-base-brand-hover: var(--g-color-private-brand-600-solid);
+ --g-color-base-selection: var(--g-color-private-brand-200);
+ --g-color-base-selection-hover: var(--g-color-private-brand-300);
+ --g-color-line-brand: var(--g-color-private-brand-600-solid);
+ --g-color-text-brand: var(--g-color-private-brand-700-solid);
+ --g-color-text-brand-heavy: var(--g-color-private-brand-700-solid);
+ --g-color-text-brand-contrast: rgb(255, 255, 255);
+ --g-color-text-link: var(--g-color-private-brand-600-solid);
+ --g-color-text-link-hover: var(--g-color-private-brand-800-solid);
+ --g-color-text-link-visited: var(--g-color-private-purple-550-solid);
+ --g-color-text-link-visited-hover: var(--g-color-private-purple-800-solid);
+}
+
+.g-root_theme_dark {
+ --g-font-family-sans: "Exo 2", serif;
+ --g-font-family-monospace: "Exo 2", serif;
+
+ --g-color-private-white-50: rgba(255, 255, 255, 0.05);
+ --g-color-private-white-70: rgba(255, 255, 255, 0.07);
+ --g-color-private-white-100: rgba(255, 255, 255, 0.1);
+ --g-color-private-white-150: rgba(255, 255, 255, 0.15);
+ --g-color-private-white-200: rgba(255, 255, 255, 0.2);
+ --g-color-private-white-250: rgba(255, 255, 255, 0.25);
+ --g-color-private-white-300: rgba(255, 255, 255, 0.3);
+ --g-color-private-white-350: rgba(255, 255, 255, 0.35);
+ --g-color-private-white-400: rgba(255, 255, 255, 0.4);
+ --g-color-private-white-450: rgba(255, 255, 255, 0.45);
+ --g-color-private-white-500: rgba(255, 255, 255, 0.5);
+ --g-color-private-white-550: rgba(255, 255, 255, 0.55);
+ --g-color-private-white-600: rgba(255, 255, 255, 0.6);
+ --g-color-private-white-650: rgba(255, 255, 255, 0.65);
+ --g-color-private-white-700: rgba(255, 255, 255, 0.7);
+ --g-color-private-white-750: rgba(255, 255, 255, 0.75);
+ --g-color-private-white-800: rgba(255, 255, 255, 0.8);
+ --g-color-private-white-850: rgba(255, 255, 255, 0.85);
+ --g-color-private-white-900: rgba(255, 255, 255, 0.9);
+ --g-color-private-white-950: rgba(255, 255, 255, 0.95);
+ --g-color-private-white-550-solid: rgb(156, 156, 156);
+ --g-color-private-white-950-solid: rgb(244, 244, 244);
+ --g-color-private-white-900-solid: rgb(233, 233, 233);
+ --g-color-private-white-850-solid: rgb(222, 222, 222);
+ --g-color-private-white-800-solid: rgb(211, 211, 211);
+ --g-color-private-white-750-solid: rgb(200, 200, 200);
+ --g-color-private-white-700-solid: rgb(189, 189, 189);
+ --g-color-private-white-650-solid: rgb(178, 178, 178);
+ --g-color-private-white-600-solid: rgb(167, 167, 167);
+ --g-color-private-white-500-solid: rgb(146, 146, 146);
+ --g-color-private-white-450-solid: rgb(135, 135, 135);
+ --g-color-private-white-400-solid: rgb(124, 124, 124);
+ --g-color-private-white-350-solid: rgb(113, 113, 113);
+ --g-color-private-white-300-solid: rgb(102, 102, 102);
+ --g-color-private-white-250-solid: rgb(91, 91, 91);
+ --g-color-private-white-200-solid: rgb(80, 80, 80);
+ --g-color-private-white-150-solid: rgb(69, 69, 69);
+ --g-color-private-white-100-solid: rgb(58, 58, 58);
+ --g-color-private-white-70-solid: rgb(51, 51, 51);
+ --g-color-private-white-50-solid: rgb(47, 47, 47);
+ --g-color-private-white-opaque-150: rgba(69, 69, 69, 0.95);
+
+ --g-color-private-black-20: rgba(0, 0, 0, 0.02);
+ --g-color-private-black-50: rgba(0, 0, 0, 0.05);
+ --g-color-private-black-100: rgba(0, 0, 0, 0.1);
+ --g-color-private-black-150: rgba(0, 0, 0, 0.15);
+ --g-color-private-black-200: rgba(0, 0, 0, 0.2);
+ --g-color-private-black-250: rgba(0, 0, 0, 0.25);
+ --g-color-private-black-300: rgba(0, 0, 0, 0.3);
+ --g-color-private-black-350: rgba(0, 0, 0, 0.35);
+ --g-color-private-black-400: rgba(0, 0, 0, 0.4);
+ --g-color-private-black-450: rgba(0, 0, 0, 0.45);
+ --g-color-private-black-500: rgba(0, 0, 0, 0.5);
+ --g-color-private-black-550: rgba(0, 0, 0, 0.55);
+ --g-color-private-black-600: rgba(0, 0, 0, 0.6);
+ --g-color-private-black-650: rgba(0, 0, 0, 0.65);
+ --g-color-private-black-700: rgba(0, 0, 0, 0.7);
+ --g-color-private-black-750: rgba(0, 0, 0, 0.75);
+ --g-color-private-black-800: rgba(0, 0, 0, 0.8);
+ --g-color-private-black-850: rgba(0, 0, 0, 0.85);
+ --g-color-private-black-900: rgba(0, 0, 0, 0.9);
+ --g-color-private-black-950: rgba(0, 0, 0, 0.95);
+ --g-color-private-black-550-solid: rgb(0, 0, 0);
+
+ --g-color-private-brand-50: rgba(39, 39, 39, 0.1);
+ --g-color-private-brand-100: rgba(39, 39, 39, 0.15);
+ --g-color-private-brand-150: rgba(39, 39, 39, 0.2);
+ --g-color-private-brand-200: rgba(39, 39, 39, 0.3);
+ --g-color-private-brand-250: rgba(39, 39, 39, 0.4);
+ --g-color-private-brand-300: rgba(39, 39, 39, 0.5);
+ --g-color-private-brand-350: rgba(39, 39, 39, 0.6);
+ --g-color-private-brand-400: rgba(39, 39, 39, 0.7);
+ --g-color-private-brand-450: rgba(39, 39, 39, 0.8);
+ --g-color-private-brand-500: rgba(39, 39, 39, 0.9);
+ --g-color-private-brand-550-solid: rgb(39, 39, 39);
+ --g-color-private-brand-1000-solid: rgb(136, 157, 133);
+ --g-color-private-brand-950-solid: rgb(130, 150, 127);
+ --g-color-private-brand-900-solid: rgb(119, 136, 116);
+ --g-color-private-brand-850-solid: rgb(107, 122, 105);
+ --g-color-private-brand-800-solid: rgb(96, 109, 94);
+ --g-color-private-brand-750-solid: rgb(85, 95, 83);
+ --g-color-private-brand-700-solid: rgb(73, 81, 72);
+ --g-color-private-brand-650-solid: rgb(62, 67, 61);
+ --g-color-private-brand-600-solid: rgb(50, 53, 50);
+ --g-color-private-brand-500-solid: rgb(39, 39, 39);
+ --g-color-private-brand-450-solid: rgb(38, 38, 38);
+ --g-color-private-brand-400-solid: rgb(38, 38, 38);
+ --g-color-private-brand-350-solid: rgb(38, 38, 38);
+ --g-color-private-brand-300-solid: rgb(38, 38, 38);
+ --g-color-private-brand-250-solid: rgb(37, 37, 37);
+ --g-color-private-brand-200-solid: rgb(37, 37, 37);
+ --g-color-private-brand-150-solid: rgb(37, 37, 37);
+ --g-color-private-brand-100-solid: rgb(36, 36, 36);
+ --g-color-private-brand-50-solid: rgb(36, 36, 36);
+
+ --g-color-private-orange-50: rgba(200, 99, 12, 0.1);
+ --g-color-private-orange-100: rgba(200, 99, 12, 0.15);
+ --g-color-private-orange-150: rgba(200, 99, 12, 0.2);
+ --g-color-private-orange-200: rgba(200, 99, 12, 0.3);
+ --g-color-private-orange-250: rgba(200, 99, 12, 0.4);
+ --g-color-private-orange-300: rgba(200, 99, 12, 0.5);
+ --g-color-private-orange-350: rgba(200, 99, 12, 0.6);
+ --g-color-private-orange-400: rgba(200, 99, 12, 0.7);
+ --g-color-private-orange-450: rgba(200, 99, 12, 0.8);
+ --g-color-private-orange-500: rgba(200, 99, 12, 0.9);
+ --g-color-private-orange-550-solid: rgb(200, 99, 12);
+ --g-color-private-orange-1000-solid: rgb(160, 166, 128);
+ --g-color-private-orange-950-solid: rgb(162, 162, 122);
+ --g-color-private-orange-900-solid: rgb(167, 154, 108);
+ --g-color-private-orange-850-solid: rgb(172, 146, 94);
+ --g-color-private-orange-800-solid: rgb(177, 139, 81);
+ --g-color-private-orange-750-solid: rgb(181, 131, 67);
+ --g-color-private-orange-700-solid: rgb(186, 123, 53);
+ --g-color-private-orange-650-solid: rgb(191, 115, 39);
+ --g-color-private-orange-600-solid: rgb(195, 107, 26);
+ --g-color-private-orange-500-solid: rgb(184, 93, 14);
+ --g-color-private-orange-450-solid: rgb(167, 86, 17);
+ --g-color-private-orange-400-solid: rgb(151, 80, 19);
+ --g-color-private-orange-350-solid: rgb(134, 74, 22);
+ --g-color-private-orange-300-solid: rgb(118, 68, 24);
+ --g-color-private-orange-250-solid: rgb(102, 61, 26);
+ --g-color-private-orange-200-solid: rgb(85, 55, 29);
+ --g-color-private-orange-150-solid: rgb(69, 49, 31);
+ --g-color-private-orange-100-solid: rgb(61, 45, 32);
+ --g-color-private-orange-50-solid: rgb(52, 42, 34);
+
+ --g-color-private-green-50: rgba(91, 181, 87, 0.1);
+ --g-color-private-green-100: rgba(91, 181, 87, 0.15);
+ --g-color-private-green-150: rgba(91, 181, 87, 0.2);
+ --g-color-private-green-200: rgba(91, 181, 87, 0.3);
+ --g-color-private-green-250: rgba(91, 181, 87, 0.4);
+ --g-color-private-green-300: rgba(91, 181, 87, 0.5);
+ --g-color-private-green-350: rgba(91, 181, 87, 0.6);
+ --g-color-private-green-400: rgba(91, 181, 87, 0.7);
+ --g-color-private-green-450: rgba(91, 181, 87, 0.8);
+ --g-color-private-green-500: rgba(91, 181, 87, 0.9);
+ --g-color-private-green-550-solid: rgb(91, 181, 87);
+ --g-color-private-green-1000-solid: rgb(144, 178, 140);
+ --g-color-private-green-950-solid: rgb(141, 179, 137);
+ --g-color-private-green-900-solid: rgb(134, 179, 130);
+ --g-color-private-green-850-solid: rgb(128, 179, 124);
+ --g-color-private-green-800-solid: rgb(122, 180, 118);
+ --g-color-private-green-750-solid: rgb(116, 180, 112);
+ --g-color-private-green-700-solid: rgb(110, 180, 106);
+ --g-color-private-green-650-solid: rgb(103, 180, 99);
+ --g-color-private-green-600-solid: rgb(97, 181, 93);
+ --g-color-private-green-500-solid: rgb(86, 167, 82);
+ --g-color-private-green-450-solid: rgb(80, 152, 77);
+ --g-color-private-green-400-solid: rgb(75, 138, 72);
+ --g-color-private-green-350-solid: rgb(69, 123, 67);
+ --g-color-private-green-300-solid: rgb(64, 109, 62);
+ --g-color-private-green-250-solid: rgb(58, 94, 56);
+ --g-color-private-green-200-solid: rgb(53, 80, 51);
+ --g-color-private-green-150-solid: rgb(47, 65, 46);
+ --g-color-private-green-100-solid: rgb(44, 58, 44);
+ --g-color-private-green-50-solid: rgb(42, 51, 41);
+
+ --g-color-private-yellow-50: rgba(255, 203, 0, 0.1);
+ --g-color-private-yellow-100: rgba(255, 203, 0, 0.15);
+ --g-color-private-yellow-150: rgba(255, 203, 0, 0.2);
+ --g-color-private-yellow-200: rgba(255, 203, 0, 0.3);
+ --g-color-private-yellow-250: rgba(255, 203, 0, 0.4);
+ --g-color-private-yellow-300: rgba(255, 203, 0, 0.5);
+ --g-color-private-yellow-350: rgba(255, 203, 0, 0.6);
+ --g-color-private-yellow-400: rgba(255, 203, 0, 0.7);
+ --g-color-private-yellow-450: rgba(255, 203, 0, 0.8);
+ --g-color-private-yellow-500: rgba(255, 203, 0, 0.9);
+ --g-color-private-yellow-550-solid: rgb(255, 203, 0);
+ --g-color-private-yellow-1000-solid: rgb(168, 182, 127);
+ --g-color-private-yellow-950-solid: rgb(173, 183, 119);
+ --g-color-private-yellow-900-solid: rgb(184, 186, 104);
+ --g-color-private-yellow-850-solid: rgb(194, 188, 89);
+ --g-color-private-yellow-800-solid: rgb(204, 191, 75);
+ --g-color-private-yellow-750-solid: rgb(214, 193, 60);
+ --g-color-private-yellow-700-solid: rgb(224, 196, 45);
+ --g-color-private-yellow-650-solid: rgb(235, 198, 30);
+ --g-color-private-yellow-600-solid: rgb(245, 201, 15);
+ --g-color-private-yellow-500-solid: rgb(233, 186, 4);
+ --g-color-private-yellow-450-solid: rgb(211, 170, 7);
+ --g-color-private-yellow-400-solid: rgb(189, 153, 11);
+ --g-color-private-yellow-350-solid: rgb(167, 136, 14);
+ --g-color-private-yellow-300-solid: rgb(146, 120, 18);
+ --g-color-private-yellow-250-solid: rgb(124, 103, 22);
+ --g-color-private-yellow-200-solid: rgb(102, 86, 25);
+ --g-color-private-yellow-150-solid: rgb(80, 69, 29);
+ --g-color-private-yellow-100-solid: rgb(69, 61, 31);
+ --g-color-private-yellow-50-solid: rgb(58, 53, 32);
+
+ --g-color-private-red-50: rgba(232, 73, 69, 0.1);
+ --g-color-private-red-100: rgba(232, 73, 69, 0.15);
+ --g-color-private-red-150: rgba(232, 73, 69, 0.2);
+ --g-color-private-red-200: rgba(232, 73, 69, 0.3);
+ --g-color-private-red-250: rgba(232, 73, 69, 0.4);
+ --g-color-private-red-300: rgba(232, 73, 69, 0.5);
+ --g-color-private-red-350: rgba(232, 73, 69, 0.6);
+ --g-color-private-red-400: rgba(232, 73, 69, 0.7);
+ --g-color-private-red-450: rgba(232, 73, 69, 0.8);
+ --g-color-private-red-500: rgba(232, 73, 69, 0.9);
+ --g-color-private-red-550-solid: rgb(232, 73, 69);
+ --g-color-private-red-1000-solid: rgb(165, 162, 137);
+ --g-color-private-red-950-solid: rgb(169, 157, 133);
+ --g-color-private-red-900-solid: rgb(177, 147, 125);
+ --g-color-private-red-850-solid: rgb(185, 136, 117);
+ --g-color-private-red-800-solid: rgb(193, 126, 109);
+ --g-color-private-red-750-solid: rgb(200, 115, 101);
+ --g-color-private-red-700-solid: rgb(208, 105, 93);
+ --g-color-private-red-650-solid: rgb(216, 94, 85);
+ --g-color-private-red-600-solid: rgb(224, 84, 77);
+ --g-color-private-red-500-solid: rgb(212, 69, 66);
+ --g-color-private-red-450-solid: rgb(193, 66, 62);
+ --g-color-private-red-400-solid: rgb(173, 62, 59);
+ --g-color-private-red-350-solid: rgb(154, 58, 56);
+ --g-color-private-red-300-solid: rgb(134, 55, 53);
+ --g-color-private-red-250-solid: rgb(114, 51, 49);
+ --g-color-private-red-200-solid: rgb(95, 47, 46);
+ --g-color-private-red-150-solid: rgb(75, 43, 43);
+ --g-color-private-red-100-solid: rgb(65, 42, 41);
+ --g-color-private-red-50-solid: rgb(56, 40, 39);
+
+ --g-color-private-blue-50: rgba(82, 130, 255, 0.1);
+ --g-color-private-blue-100: rgba(82, 130, 255, 0.15);
+ --g-color-private-blue-150: rgba(82, 130, 255, 0.2);
+ --g-color-private-blue-200: rgba(82, 130, 255, 0.3);
+ --g-color-private-blue-250: rgba(82, 130, 255, 0.4);
+ --g-color-private-blue-300: rgba(82, 130, 255, 0.5);
+ --g-color-private-blue-350: rgba(82, 130, 255, 0.6);
+ --g-color-private-blue-400: rgba(82, 130, 255, 0.7);
+ --g-color-private-blue-450: rgba(82, 130, 255, 0.8);
+ --g-color-private-blue-500: rgba(82, 130, 255, 0.9);
+ --g-color-private-blue-550-solid: rgb(82, 130, 255);
+ --g-color-private-blue-1000-solid: rgb(142, 171, 165);
+ --g-color-private-blue-950-solid: rgb(139, 168, 170);
+ --g-color-private-blue-900-solid: rgb(132, 164, 181);
+ --g-color-private-blue-850-solid: rgb(125, 159, 191);
+ --g-color-private-blue-800-solid: rgb(118, 154, 202);
+ --g-color-private-blue-750-solid: rgb(110, 149, 213);
+ --g-color-private-blue-700-solid: rgb(103, 144, 223);
+ --g-color-private-blue-650-solid: rgb(96, 140, 234);
+ --g-color-private-blue-600-solid: rgb(89, 135, 244);
+ --g-color-private-blue-500-solid: rgb(77, 121, 233);
+ --g-color-private-blue-450-solid: rgb(73, 111, 211);
+ --g-color-private-blue-400-solid: rgb(68, 102, 189);
+ --g-color-private-blue-350-solid: rgb(64, 92, 167);
+ --g-color-private-blue-300-solid: rgb(59, 83, 146);
+ --g-color-private-blue-250-solid: rgb(54, 74, 124);
+ --g-color-private-blue-200-solid: rgb(50, 64, 102);
+ --g-color-private-blue-150-solid: rgb(45, 55, 80);
+ --g-color-private-blue-100-solid: rgb(43, 50, 69);
+ --g-color-private-blue-50-solid: rgb(41, 45, 58);
+
+ --g-color-private-cool-grey-50: rgba(96, 128, 156, 0.1);
+ --g-color-private-cool-grey-100: rgba(96, 128, 156, 0.15);
+ --g-color-private-cool-grey-150: rgba(96, 128, 156, 0.2);
+ --g-color-private-cool-grey-200: rgba(96, 128, 156, 0.3);
+ --g-color-private-cool-grey-250: rgba(96, 128, 156, 0.4);
+ --g-color-private-cool-grey-300: rgba(96, 128, 156, 0.5);
+ --g-color-private-cool-grey-350: rgba(96, 128, 156, 0.6);
+ --g-color-private-cool-grey-400: rgba(96, 128, 156, 0.7);
+ --g-color-private-cool-grey-450: rgba(96, 128, 156, 0.8);
+ --g-color-private-cool-grey-500: rgba(96, 128, 156, 0.9);
+ --g-color-private-cool-grey-550-solid: rgb(96, 128, 156);
+ --g-color-private-cool-grey-1000-solid: rgb(144, 171, 150);
+ --g-color-private-cool-grey-950-solid: rgb(142, 168, 150);
+ --g-color-private-cool-grey-900-solid: rgb(136, 163, 151);
+ --g-color-private-cool-grey-850-solid: rgb(130, 158, 152);
+ --g-color-private-cool-grey-800-solid: rgb(125, 153, 153);
+ --g-color-private-cool-grey-750-solid: rgb(119, 148, 153);
+ --g-color-private-cool-grey-700-solid: rgb(113, 143, 154);
+ --g-color-private-cool-grey-650-solid: rgb(107, 138, 155);
+ --g-color-private-cool-grey-600-solid: rgb(102, 133, 155);
+ --g-color-private-cool-grey-500-solid: rgb(90, 119, 144);
+ --g-color-private-cool-grey-450-solid: rgb(84, 110, 132);
+ --g-color-private-cool-grey-400-solid: rgb(78, 100, 120);
+ --g-color-private-cool-grey-350-solid: rgb(72, 91, 108);
+ --g-color-private-cool-grey-300-solid: rgb(66, 82, 96);
+ --g-color-private-cool-grey-250-solid: rgb(60, 73, 84);
+ --g-color-private-cool-grey-200-solid: rgb(54, 64, 72);
+ --g-color-private-cool-grey-150-solid: rgb(48, 54, 60);
+ --g-color-private-cool-grey-100-solid: rgb(45, 50, 54);
+ --g-color-private-cool-grey-50-solid: rgb(42, 45, 48);
+
+ --g-color-private-purple-50: rgba(143, 82, 204, 0.1);
+ --g-color-private-purple-100: rgba(143, 82, 204, 0.15);
+ --g-color-private-purple-150: rgba(143, 82, 204, 0.2);
+ --g-color-private-purple-200: rgba(143, 82, 204, 0.3);
+ --g-color-private-purple-250: rgba(143, 82, 204, 0.4);
+ --g-color-private-purple-300: rgba(143, 82, 204, 0.5);
+ --g-color-private-purple-350: rgba(143, 82, 204, 0.6);
+ --g-color-private-purple-400: rgba(143, 82, 204, 0.7);
+ --g-color-private-purple-450: rgba(143, 82, 204, 0.8);
+ --g-color-private-purple-500: rgba(143, 82, 204, 0.9);
+ --g-color-private-purple-550-solid: rgb(143, 82, 204);
+ --g-color-private-purple-1000-solid: rgb(152, 164, 157);
+ --g-color-private-purple-950-solid: rgb(151, 159, 160);
+ --g-color-private-purple-900-solid: rgb(150, 149, 166);
+ --g-color-private-purple-850-solid: rgb(149, 140, 171);
+ --g-color-private-purple-800-solid: rgb(148, 130, 177);
+ --g-color-private-purple-750-solid: rgb(147, 120, 182);
+ --g-color-private-purple-700-solid: rgb(146, 111, 188);
+ --g-color-private-purple-650-solid: rgb(145, 101, 193);
+ --g-color-private-purple-600-solid: rgb(144, 92, 199);
+ --g-color-private-purple-500-solid: rgb(132, 77, 187);
+ --g-color-private-purple-450-solid: rgb(122, 73, 170);
+ --g-color-private-purple-400-solid: rgb(111, 68, 154);
+ --g-color-private-purple-350-solid: rgb(100, 64, 137);
+ --g-color-private-purple-300-solid: rgb(90, 59, 120);
+ --g-color-private-purple-250-solid: rgb(79, 54, 103);
+ --g-color-private-purple-200-solid: rgb(68, 50, 86);
+ --g-color-private-purple-150-solid: rgb(57, 45, 70);
+ --g-color-private-purple-100-solid: rgb(52, 43, 61);
+ --g-color-private-purple-50-solid: rgb(47, 41, 53);
+
+ --g-color-base-brand: #272727;
+ --g-color-base-background: #242424;
+ --g-color-base-brand-hover: var(--g-color-private-brand-650-solid);
+ --g-color-base-selection: var(--g-color-private-brand-150);
+ --g-color-base-selection-hover: var(--g-color-private-brand-200);
+ --g-color-line-brand: var(--g-color-private-brand-600-solid);
+ --g-color-text-brand: var(--g-color-private-brand-600-solid);
+ --g-color-text-brand-heavy: var(--g-color-private-brand-700-solid);
+ --g-color-text-brand-contrast: rgb(255, 255, 255);
+ --g-color-text-link: var(--g-color-private-brand-550-solid);
+ --g-color-text-link-hover: var(--g-color-private-brand-700-solid);
+ --g-color-text-link-visited: var(--g-color-private-purple-700-solid);
+ --g-color-text-link-visited-hover: var(--g-color-private-purple-850-solid);
 }
