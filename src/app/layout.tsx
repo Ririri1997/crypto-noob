@@ -3,8 +3,8 @@ import { Inria_Sans } from "next/font/google";
 import './globals.css'
 import '@gravity-ui/uikit/styles/fonts.css';
 import '@gravity-ui/uikit/styles/styles.css';
-import ThemeProviderWrapper from "@/providers/ThemeProviderWrapper/ThemeProviderWrapper";
-import StoreProvider from "@/providers/ThemeProviderWrapper/storeProvider";
+import ThemeProviderWrapper from "@/providers/ThemeProviderWrapper";
+import StoreProvider from "@/providers/storeProvider";
 
 const InriaSans = Inria_Sans({
   weight: ['400', '700'], 
