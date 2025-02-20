@@ -3,7 +3,8 @@ import { Inria_Sans } from "next/font/google";
 import './globals.css'
 import '@gravity-ui/uikit/styles/fonts.css';
 import '@gravity-ui/uikit/styles/styles.css';
-import ThemeProviderWrapper from "@/components/ThemeProviderWrapper copy/ThemeProviderWrapper";
+import ThemeProviderWrapper from "@/providers/ThemeProviderWrapper/ThemeProviderWrapper";
+import StoreProvider from "@/providers/ThemeProviderWrapper/storeProvider";
 
 const InriaSans = Inria_Sans({
   weight: ['400', '700'], 
@@ -20,8 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${InriaSans.variable}`}>
+       <StoreProvider>
         <ThemeProviderWrapper>{children}
         </ThemeProviderWrapper>
+        </StoreProvider>
       </body>
     </html>
   );

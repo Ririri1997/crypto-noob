@@ -2,12 +2,14 @@
 import cn from "classnames";
 import styles from "./ThemeSwitch.module.css";
 import { Switch } from "@gravity-ui/uikit";
-import { useContext} from "react";
-import { ThemeContext } from "../ThemeProviderWrapper copy/ThemeProviderWrapper";
-
+import {RootState} from '@/store/store';
+import { useSelector } from "react-redux";
+import { toggleTheme } from "@/store/theme.slice";
+import { useDispatch } from "react-redux";
 
 export default function ThemeSwitch() {
- const {theme, toggleTheme } = useContext(ThemeContext);
+const theme = useSelector((state: RootState)=> state.theme.mode)
+const dispatch = useDispatch();
 
 
  return (
@@ -15,7 +17,7 @@ export default function ThemeSwitch() {
    <Switch
     size="l"
     checked={theme === "dark"} 
-    onUpdate={toggleTheme}
+    onUpdate={() => dispatch(toggleTheme())}
    >
    {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
    </Switch>
