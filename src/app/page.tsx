@@ -1,65 +1,86 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { Card, Text } from "@gravity-ui/uikit";
-import { TopCurrencyData } from "@/interfaces/topCoins.interfaces";
-import { API_URLS } from "@/utils/apiUrls";
+import { Text } from "@gravity-ui/uikit";
+import { IMG_URL } from "@/utils/apiUrls";
+import cn from "classnames";
+import Card from "@/components/Card/Card";
+import { AppDispatch, RootState } from "@/store/store";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { fetchTopCoins } from "@/store/topCoins.slice";
+import { fetchDataHistory } from "@/store/historicalData.slice";
+import calculateRSI from "@/utils/rsiCalculator";
 
 export default function Home() {
- const [topCoins, setTopCoins] = useState<TopCurrencyData[] | null>(null);
+ const [rsiData, setRsiData] = useState<Record<string, number | null>>({});
+ const { topCoins } = useSelector((state: RootState) => state.topCoins);
+ const { historicalData } = useSelector(
+  (state: RootState) => state.historicalData
+ );
 
- async function getDataTop() {
-  const url = API_URLS.TOP;
-  try {
-   const response = await fetch(url);
-   if (!response.ok) {
-    throw new Error("Network response was not ok");
-   }
-   const result = await response.json();
-   setTopCoins(result.Data);
-   console.log(result.Data);
-  } catch (error) {
-   console.error("There has been a problem with your fetch operation:", error);
-  }
- }
+ const dispatch = useDispatch<AppDispatch>();
 
  useEffect(() => {
-  getDataTop();
- }, []);
+  dispatch(fetchTopCoins());
+ }, [dispatch]);
+
+ useEffect(() => {
+  if (topCoins && topCoins.length > 0) {
+   topCoins.forEach((coin) => {
+    dispatch(fetchDataHistory(coin.CoinInfo.Internal));
+   });
+  }
+ }, [topCoins, dispatch]);
+
+ useEffect(() => {
+  if (historicalData && Object.keys(historicalData).length > 0) {
+    const newRSIData: Record<string, number | null> = {};
+
+    Object.entries(historicalData).forEach(([coinSymbol, data]) => {
+     if (data && Array.isArray(data) && data.length >= 14) {
+       newRSIData[coinSymbol] = calculateRSI(data);
+     } else {
+       newRSIData[coinSymbol] = null;
+     }
+   });
+    setRsiData(newRSIData);
+  }
+}, [historicalData]);
+
 
  return (
-    <main className={styles.main}>
-     <Text>Список криптовалют:</Text>
-     {topCoins ? (
-      <div>
-       {Object.keys(topCoins).map((key) => {
-        const coin = topCoins[key];
-        return (
-         <Card key={coin.CoinInfo.Name} className={styles.coinCard}>
-          <Text>
-           <strong>{coin.CoinInfo.FullName}</strong> ({coin.CoinInfo.Name})
-          </Text>
-          <Text>
-           <strong>Цена </strong> ({coin.DISPLAY.USD.PRICE})
-          </Text>
-          <Text>
-           <strong>Изменения в последние сутки в %</strong> (
-           {coin.DISPLAY.USD.CHANGEPCT24HOUR})
-          </Text>
-          <Text>
-           <strong>Изменения в последний час в %</strong> (
-           {coin.DISPLAY.USD.CHANGEPCTHOUR})
-          </Text>
+  <main className={styles.main}>
+   {topCoins && topCoins.length > 0 ? (
+    <div className={cn(styles["card-wrapper"])}>
+     {topCoins.map((coin) => {
+      const rsi = rsiData[coin.CoinInfo.Internal];
+      const historicalCoinData = historicalData[coin.CoinInfo.Internal] || [];
 
-          <Text>Дата запуска: {coin.CoinInfo.AssetLaunchDate}</Text>
-          <hr />
-         </Card>
-        );
-       })}
-      </div>
-     ) : (
-      <Text>Загрузка данных...</Text>
-     )}
-    </main>
+      return (
+       <Card
+        key={coin.CoinInfo.Name}
+        name={coin.CoinInfo.FullName}
+        internal={coin.CoinInfo.Internal}
+        price={coin.DISPLAY?.USD.PRICE || "Нет данных"}
+        img={IMG_URL + coin.CoinInfo.ImageUrl}
+        change24hour={coin.DISPLAY?.USD.CHANGEPCT24HOUR || "Нет данных"}
+        rsi={rsi}
+        data={
+         historicalCoinData.length > 0
+          ? historicalCoinData.map((item) => ({
+             time: item.time,
+             close: item.close,
+            }))
+          : []
+        }
+       />
+      );
+     })}
+    </div>
+   ) : (
+    <Text>Загрузка данных...</Text>
+   )}
+  </main>
  );
 }

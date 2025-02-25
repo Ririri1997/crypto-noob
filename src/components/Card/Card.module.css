@@ -1,0 +1,43 @@
+.coin-card{
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+}
+
+.top{
+ background-color: #464646;
+ text-align: center;
+ padding-bottom: 0.19rem;
+}
+
+.red{
+ background-color: #5D2727;
+}
+.green{
+ background-color: #275D3C;
+}
+.card-info{
+ display: grid;
+ grid-template-columns: auto 1fr max-content;
+ gap: 0.625rem;
+ padding: 0.75rem 1rem;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.img{
+ max-width: 2.5rem;
+ height: auto;
+}
+
+.name{
+ display: flex;
+ flex-direction: column;
+}
+
+.price{
+ display: flex;
+ flex-direction: column;
+ line-height: 1.25rem
+}
+.secondary{
+ color: var(--text-secondary)
+}

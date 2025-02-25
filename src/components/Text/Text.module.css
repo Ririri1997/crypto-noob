@@ -1,0 +1,37 @@
+.text {
+ font-family: 'Arial', sans-serif;
+ line-height: 1.5;
+}
+
+.text.s {
+ font-size: 0.8125rem;
+ ;  
+}
+
+.text.m {
+ font-size: 0.6875rem;
+}
+
+.text.l {
+ font-size: 0.9375rem;
+}
+
+
+.text.secondary {
+ color: var(--text-secondary); 
+}
+
+.text.primary {
+ color: var(--text-primary); 
+}
+
+
+.text.red {
+ background-color: #5D2727; 
+}
+
+.text.green {
+ background-color: #275D3C;
+}
+
+

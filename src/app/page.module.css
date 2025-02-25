@@ -1,1 +1,10 @@
 @import '@gravity-ui/uikit/styles/styles.css';
+
+.main{
+ padding: 1.5rem 1.75rem;
+}
+.card-wrapper{
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 1rem;
+}
