@@ -3,9 +3,17 @@ import { API_URLS } from '@/utils/apiUrls';
 import { TopCurrencyData } from "@/interfaces/topCoins.interfaces";
 
 export const fetchTopCoins = createAsyncThunk('coins/fetchTopCoins', async () => {
+ try {
   const response = await fetch(API_URLS.TOP);
   const result = await response.json();
+  console.log(result);
   return result.Data;
+ }catch (error) {
+    if( error instanceof Error) {
+     console.log(error.message);
+     error.message = "Неизвестная ошибка"
+    }
+  };
 });
 
 type TopCoins = {
@@ -35,7 +43,7 @@ const topCoinsSlice = createSlice({
         state.loading = false;
       })
       .addCase(fetchTopCoins.rejected, (state, action) => {
-       state.error = action.error.message || null; 
+       state.error = action.error.message || null;
       });
   },
 });
