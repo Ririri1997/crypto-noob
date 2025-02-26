@@ -1,8 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
  images: {
-  domains: ['cryptocompare.com'], // Добавьте cryptocompare.com в этот список
-},};
+   domains: [
+     "cryptocompare.com",
+     'resources.cryptocompare.com',
+     "images.cryptocompare.com"  
+   ],
+ },
+};
 
 export default nextConfig;

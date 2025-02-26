@@ -1,0 +1,8 @@
+.news-wrapper{
+ display: grid;
+ flex-direction: column;
+ padding: 1rem 1.75rem 1.25rem 1.75rem;
+ overflow-y: auto; 
+ max-height: auto; 
+ gap: 0.75rem;
+}

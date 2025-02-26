@@ -11,7 +11,7 @@ import cn from "classnames";
 import styles from './Chart.module.css'
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-
+import dayjs from "dayjs";
 
 
 export default function Chart({ data }: ChartProps) {
@@ -21,10 +21,11 @@ export default function Chart({ data }: ChartProps) {
  const dotColor = theme === "dark" ? "#fff" : "#0a0807";
  const tooltipBg = theme === "dark" ? "#222" : "white";
 
+ const formatDate = (time: number) => dayjs.unix(time).format("DD MMM YYYY");
 
  return (
   <div className={cn(styles['chart-wrapper'])}>
-  <ResponsiveContainer width="100%" height={300}>
+  <ResponsiveContainer width="100%" height={150}>
    <LineChart data={data}>
     <XAxis
      dataKey="time"
@@ -38,6 +39,8 @@ export default function Chart({ data }: ChartProps) {
     <Tooltip
      contentStyle={{ backgroundColor: tooltipBg, borderRadius: "10px" }}
      itemStyle={{ color: dotColor }}
+     labelFormatter={formatDate} 
+     formatter={(value)=>[`${value}$`]}
     />
     <Line
      type="monotone"

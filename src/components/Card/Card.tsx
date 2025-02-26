@@ -8,6 +8,7 @@ import Image from "next/image";
 import Chart from "../Chart/Chart";
 import Text from "../Text/Text";
 
+
 export default function Card({
  name,
  internal,
@@ -25,8 +26,9 @@ export default function Card({
    : rsi > 70
    ? "sell"
    : "hold";
+   
 
-
+console.log(data);
    return (
   <CardGUI className={cn(styles["coin-card"])}>
    <Text
