@@ -6,7 +6,6 @@ export const fetchTopCoins = createAsyncThunk('coins/fetchTopCoins', async () =>
  try {
   const response = await fetch(API_URLS.TOP);
   const result = await response.json();
-  console.log(result);
   return result.Data;
  }catch (error) {
     if( error instanceof Error) {

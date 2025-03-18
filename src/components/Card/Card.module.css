@@ -3,6 +3,7 @@
  flex-direction: column;
  border-radius: 1.25rem;
  overflow: hidden;
+ height: 261px;
 }
 
 .top{

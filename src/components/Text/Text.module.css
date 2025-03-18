@@ -4,8 +4,7 @@
 }
 
 .text.s {
- font-size: 0.8125rem;
- ;  
+ font-size: 0.8125rem; 
 }
 
 .text.m {
@@ -35,3 +34,10 @@
 }
 
 
+.text.overflow{
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+ text-overflow: ellipsis;
+}

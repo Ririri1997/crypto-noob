@@ -20,6 +20,7 @@ export default function News({}) {
   if (news && news.length === 0) {
    dispatch(fetchNews());
   }
+  console.log(news);
 
  }, [news, dispatch]);
 
@@ -27,7 +28,7 @@ export default function News({}) {
   <div className={cn(styles["news-wrapper"])}>
    {news && news.length > 0 ? (
   news.map((item) =>
-   <New key={item.id} title={item.title} img={item.imageurl}/> 
+   <New href={item.url} key={item.id} title={item.title} img={item.imageurl}/> 
  )
 ) : (
   <Text>Котик с гитарой</Text>

@@ -40,7 +40,6 @@ export default function Home() {
     dispatch(fetchDataHistory(coin.CoinInfo.Internal));
    });
   }
-  console.log("2");
  }, [topCoins, dispatch]);
 
  useEffect(() => {

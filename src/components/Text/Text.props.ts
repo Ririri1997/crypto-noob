@@ -4,4 +4,5 @@ export default interface CustomTextProps extends React.ComponentProps<typeof Tex
  size?: 's' | 'm' | 'l';  
  color?: 'primary' | 'secondary'; 
  children: React.ReactNode;
+ overflow?: boolean;
 }

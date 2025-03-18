@@ -28,8 +28,7 @@ export default function Card({
    : "hold";
    
 
-console.log(data);
-   return (
+  return (
   <CardGUI className={cn(styles["coin-card"])}>
    <Text
     size='s'
